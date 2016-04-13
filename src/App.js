@@ -22,12 +22,26 @@ export class App extends Component {
 		};
 
 		this.getData();
+
 	}
 
 	// <EventTeam data={this.state.infoData}/>
   render() {
+
+  	var containerStyle = {
+  		padding: 20,
+  		backgroundColor: 'blueviolet',
+  	}
+
+  	var h3Color = {
+  		color: 'white'
+  	}
+
     return (
     	<div>
+    		<div className="mainContainer" style={containerStyle}>
+    			<h3 style={h3Color}>Team Members</h3>
+    		</div>
     		<SearchBar />
     		<EventTeam data={this.state.infoData}/>
     	</div>
