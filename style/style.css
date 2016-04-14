@@ -6,7 +6,7 @@
 .search-bar input {
 	width: 75%;
 }
-
-.mainContainer {
-	height: 300px;
+.person {
+	height: 50px;
+	border: 1px solid darkgrey;
 }

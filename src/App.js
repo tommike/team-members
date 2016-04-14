@@ -38,11 +38,14 @@ export class App extends Component {
   	}
 
     return (
-    	<div>
-    		<div className="mainContainer" style={containerStyle}>
+    	<div className="container-fluid">
+    		<div style={containerStyle}>
     			<h3 style={h3Color}>Team Members</h3>
     		</div>
-    		<SearchBar />
+    		<div>
+    			<i className="fa fa-search" aria-hidden="true"></i>
+    			<SearchBar></SearchBar>
+    		</div>
     		<EventTeam data={this.state.infoData}/>
     	</div>
     );

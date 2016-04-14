@@ -12,7 +12,7 @@ const EventTeam = (props) => {
 	})
 
 	return (
-			<ul className="col-md-4 list-group">
+			<ul className="container-fluid list-group">
 				{teams}
 			</ul>
 		);

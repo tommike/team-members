@@ -9,7 +9,7 @@ class SearchBar extends Component {
 
 	render() {
 		return (
-			<div className="search-bar">
+			<div style={{border: '1px solid darkgrey', padding: '10px', width: '100%'}} className="search-bar">
 				<input
 				value={this.state.term}
 				onChange={event => this.onInputChange(event.target.value)}
