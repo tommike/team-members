@@ -7,9 +7,9 @@ const ItemDetail = ({team}) => {
 	// 	border: 1px solid darkgrey;
 	// }
 	return (
-		<div className="container-fluid" style={{border: '1px solid darkgrey', padding: '10px'}} className="align-center col-md-12">
-			<div >{team.name}<br /></div>
-			<div style={{fontSize: 13, color: 'gray'}}>{team.email}</div>
+		<div className="container-fluid list-group" style={{border: '1px solid darkgrey', padding: '10px'}}>
+			<div style={{fontWeight: 'bold'}}>{team.name}<br /></div>
+			<div style={{fontSize: 13, color: 'darkgrey'}}>{team.email}</div>
 		</div>
 	)
 

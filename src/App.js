@@ -29,21 +29,26 @@ export class App extends Component {
   render() {
 
   	var containerStyle = {
-  		padding: 20,
-  		backgroundColor: 'blueviolet',
+  		marginLeft: '0',
+  		marginRight: '0',
+  		backgroundColor: 'blueviolet'
   	}
 
-  	var h3Color = {
-  		color: 'white'
+  	var h3Style = {
+  		color: 'white',
+  		height: '80',
+  		fontSize: '25',
+  		textAlign: 'left',
+  		marginLeft: '25',
+  		marginBottom: '0',
   	}
 
     return (
-    	<div className="container-fluid">
+    	<div>
     		<div style={containerStyle}>
-    			<h3 style={h3Color}>Team Members</h3>
+    			<h3 style={h3Style}>Team Members</h3>
     		</div>
-    		<div>
-    			<i className="fa fa-search" aria-hidden="true"></i>
+    		<div className="container-fluid list-group" style={{paddingRight:'0'}}>
     			<SearchBar></SearchBar>
     		</div>
     		<EventTeam data={this.state.infoData}/>

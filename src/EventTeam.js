@@ -12,7 +12,7 @@ const EventTeam = (props) => {
 	})
 
 	return (
-			<ul className="container-fluid list-group">
+			<ul className="container-fluid list-group" style={{paddingRight:'0'}}>
 				{teams}
 			</ul>
 		);
