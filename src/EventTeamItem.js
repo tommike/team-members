@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchBar from './search_bar';
 
 const ItemDetail = ({team}) => {
 	console.log(team);
