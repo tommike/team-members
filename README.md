@@ -4,8 +4,6 @@
 
 You are building a list of event team members using React.js.
 
-![alt text](https://raw.githubusercontent.com/lennd/front-end-developer-exercise/master/excercise-design.png "Exercise")
-
 #### Details
 - Use the JPG or Sketch file contained in this repository as your visual guide. If you'd like, you can download a trial of Sketch here: https://www.sketchapp.com/
 - You must consume this endpoint (http://jsonplaceholder.typicode.com/users) to get the users for the list. How you consume the endpoint is up to you.
@@ -28,14 +26,14 @@ You are building a list of event team members using React.js.
 - Use a Gravatar for displaying a user's avatar based on the user's email
 
 #### To submit
-- Send Alex (ratingsoft@gmail.com) an email with a link to your repository
+- Send Alex (aleksandrm@xara.com) an email with a link to your repository
 
 #### Notes
 - The design shows just a sampling of users. You should display all of the users that the endpoint returns.
 - For the icons, use FontAwesome (https://fortawesome.github.io/Font-Awesome/icons/). The CSS has already been included in the project.
 
 #### Questions / problems / comments?
-Contact Alex - ratingsoft@gmail.com
+Contact Alex - aleksandrm@xara.com
 
 ---
 
