@@ -50,7 +50,7 @@ Contact Alex - ratingsoft@gmail.com
 In the directory where you'd like this repository to live, run the following commands:
 
 ```
-> $ git clone git@github.com:lennd/front-end-developer-exercise.git
+> $ git clone git@github.com:rsofter/front-end-developer-exercise.git
 > $ cd front-end-developer-exercise
 > $ npm install
 ```
