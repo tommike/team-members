@@ -1,4 +1,4 @@
-# Lennd - Front-End Developer Exercise
+# Front-End Developer Exercise
 
 ## Instructions
 
@@ -28,14 +28,14 @@ You are building a list of event team members using React.js.
 - Use a Gravatar for displaying a user's avatar based on the user's email
 
 #### To submit
-- Send Josh (josh@lennd.com) an email with a link to your repository
+- Send Alex (ratingsoft@gmail.com) an email with a link to your repository
 
 #### Notes
 - The design shows just a sampling of users. You should display all of the users that the endpoint returns.
 - For the icons, use FontAwesome (https://fortawesome.github.io/Font-Awesome/icons/). The CSS has already been included in the project.
 
 #### Questions / problems / comments?
-Contact Josh - josh@lennd.com
+Contact Alex - ratingsoft@gmail.com
 
 ---
 
