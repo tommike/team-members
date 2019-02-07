@@ -28,7 +28,7 @@ const MembersListView = props => {
 };
 
 MembersListView.propTypes = {
-  tasks: PropTypes.array,
+  members: PropTypes.array,
 };
 
 export default MembersListView;

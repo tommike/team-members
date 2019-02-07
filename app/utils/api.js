@@ -15,11 +15,8 @@ function handleJSONResponse(response) {
   });
 }
 
-
 API.fetchMembers = function() {
-  return fetch('http://jsonplaceholder.typicode.com/users', {
-    method: 'GET',
-  })
+  return fetch('http://jsonplaceholder.typicode.com/users')
     .then(handleJSONResponse)
     .then(incomingData => incomingData)
     .catch(error => Promise.reject(error.error || error.statusText));

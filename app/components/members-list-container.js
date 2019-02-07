@@ -16,9 +16,8 @@ class MembersListContainer extends Component {
   }
 
   handleChange(event) {
-
     this.setState(() => ({
-      'searchTerm': event.target.value,
+      searchTerm: event.target.value,
     }));
   }
 
@@ -35,10 +34,14 @@ class MembersListContainer extends Component {
         {message && <p className="new-member-created">New member has been successfully created</p>}
 
         <form id="search-toolbar">
-          <input type="text" name="search-term" value={searchTerm}
-          placeholder="Find by name"
-          autocomplete="off"
-          onChange={this.handleSubmit} />
+          <input
+            type="text"
+            name="search-term"
+            value={searchTerm}
+            placeholder="Find by name"
+            autoComplete="off"
+            onChange={this.handleSubmit}
+          />
         </form>
 
         {Array.isArray(members) && members.length ? (
