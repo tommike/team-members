@@ -1,5 +1,8 @@
-.DS_Store
 node_modules
-npm-debug.log
+.DS_Store
 dist
-.idea
+.sass-cache
+coverage
+.vscode
+reports
+package-lock.json
