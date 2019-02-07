@@ -2,7 +2,7 @@ import { getInitialData } from '../utils/api';
 
 export const RECEIVE_DATA = 'RECEIVE_DATA';
 
-function receiveData(tasks, countries) {
+function receiveData(members) {
   return {
     type: RECEIVE_DATA,
     members,
@@ -11,8 +11,9 @@ function receiveData(tasks, countries) {
 
 export function handleInitialData() {
   return function(dispatch) {
-    return getInitialData().then(({ tasks, countries }) => {
-      dispatch(receiveData(tasks, countries));
+    return getInitialData().then(({ members }) => {
+      console.log(members);
+      dispatch(receiveData(members));
     });
   };
 }

@@ -23,8 +23,7 @@ API.fetchMembers = function() {
 };
 
 export function getInitialData() {
-  return Promise.all([API.fetchMembers()]).then(
-    ([members]) => ({
+  return API.fetchMembers().then(members => ({
     members,
   }));
 }

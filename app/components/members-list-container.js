@@ -8,6 +8,8 @@ const initialState = {
   searchTerm: '',
 };
 
+// const resultsPerPage = 3;
+
 class MembersListContainer extends Component {
   constructor(props) {
     super(props);
@@ -25,9 +27,7 @@ class MembersListContainer extends Component {
     const { members, location } = this.props;
     const message = location.state && location.state.showSuccess ? location.state.showSuccess : '';
 
-    const {
-      searchTerm,
-    } = this.state;
+    const { searchTerm } = this.state;
 
     return (
       <>
@@ -55,6 +55,7 @@ class MembersListContainer extends Component {
 }
 
 MembersListContainer.propTypes = {
+  location: PropTypes.object,
   members: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
