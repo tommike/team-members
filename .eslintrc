@@ -16,7 +16,6 @@
     "jest": true
   },
   "rules": {
-    "linebreak-style": ["error", "windows"],
     "no-debugger": 0,
     "no-alert": 0,
     "no-unused-vars": [
