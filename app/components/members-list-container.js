@@ -33,14 +33,15 @@ class MembersListContainer extends Component {
       <>
         {message && <p className="new-member-created">New member has been successfully created</p>}
 
-        <form id="search-toolbar">
+        <form className="search">
           <input
-            type="text"
+            type="search"
             name="search-term"
             value={searchTerm}
             placeholder="Find by name"
             autoComplete="off"
             onChange={this.handleSubmit}
+            className="search__keyword"
           />
         </form>
 

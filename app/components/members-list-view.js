@@ -7,17 +7,28 @@ const MembersListView = props => {
 
   return (
     <>
-      <h2>{members.length} People found</h2>
+      <h2>{members.length} People</h2>
       <ul className="members-list">
         {members.map((item, index) => {
-          const { name, email } = item;
+          const {
+            name,
+            email,
+            address: { street, suite, city, zipcode },
+          } = item;
 
           /* ideally use item-id from database for key attribute */
           return (
-            <li key={index} className="members-list__item">
-              <h3>{name}</h3>
-              <p>
-                <a href="mailto:{email}">{email}</a>
+            <li key={index} className="members-list__item member">
+              <h3 className="member__name">{name}</h3>
+              <div className="member__photo" />
+              <p className="member__email">
+                <a href={`mailto:${email}`}>{email}</a>
+              </p>
+              <p className="member__more">
+                <a href="#">Member</a>
+              </p>
+              <p className="member__address">
+                <strong>Address:</strong> {street}, {suite}, {city}, {zipcode}
               </p>
             </li>
           );
