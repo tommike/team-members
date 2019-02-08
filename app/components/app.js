@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     const { dataLoading } = this.props;
     if (dataLoading === true) {
-      return <h3 className="app-loading">Loading</h3>;
+      return <p className="app-loading">Loading</p>;
     }
     return (
       <Router>
