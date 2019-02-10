@@ -435,6 +435,14 @@ header {
     position: absolute;
     top: 30px;
     right: 20px;
+    padding-right: 15px;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
   }
 
   &__address {

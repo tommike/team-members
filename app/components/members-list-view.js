@@ -97,6 +97,11 @@ class MembersListView extends Component {
                   <p className="member__email">{email}</p>
                   <p className="member__more">
                     Member <FontAwesomeIcon icon="info-angle-right" color="#ccc" />
+                    {activeItem === id ? (
+                      <FontAwesomeIcon icon="angle-down" color="limegreen" />
+                    ) : (
+                      <FontAwesomeIcon icon="angle-right" color="limegreen" />
+                    )}
                   </p>
                 </a>
                 <p className="member__address">
