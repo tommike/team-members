@@ -380,6 +380,10 @@ header {
     border-top: 1px solid #ccc;
     position: relative;
 
+    &:first-child {
+      border-top: 0;
+    }
+
     &--active {
       .member__address {
         display: block;
@@ -455,6 +459,7 @@ header {
 .search {
   padding: 20px;
   background: #eee;
+  border-bottom: 1px solid #ccc;
 
   &__field {
     background: #fff;
