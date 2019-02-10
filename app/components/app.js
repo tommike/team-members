@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSearch, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { handleInitialData } from '../actions/shared';
 import MembersListPage from './members-list-page';
 
-library.add(faSearch, faAngleLeft, faAngleRight);
+library.add(faSearch, faAngleDown, faAngleRight);
 
 class App extends Component {
   componentDidMount() {
