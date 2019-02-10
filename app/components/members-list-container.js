@@ -24,24 +24,23 @@ class MembersListContainer extends Component {
   }
 
   render() {
-    const { members, location } = this.props;
-    const message = location.state && location.state.showSuccess ? location.state.showSuccess : '';
-
+    const { members } = this.props;
     const { searchTerm } = this.state;
+
+    const results = members.filter(member =>
+      member.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
       <>
-        {message && <p className="new-member-created">New member has been successfully created</p>}
-
         <SearchForm changeCallback={this.handleChange} searchTerm={searchTerm} />
-        <MembersListView members={members} searchTerm={searchTerm} />
+        <MembersListView members={results} />
       </>
     );
   }
 }
 
 MembersListContainer.propTypes = {
-  location: PropTypes.object,
   members: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,

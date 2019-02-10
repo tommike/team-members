@@ -36,22 +36,19 @@ class MembersListView extends Component {
   }
 
   render() {
-    const { members, searchTerm } = this.props;
     const { activeItem } = this.state;
+    const { members } = this.props;
 
-    const results = members.filter(member =>
-      member.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    if (results.length === 0) {
+    if (members.length === 0) {
       return <p className="no-members-found">No members found</p>;
     }
 
     return (
       <>
-        <h2>{results.length} People</h2>
+        <h2>{members.length} People</h2>
+
         <ul className="members-list">
-          {results.map(item => {
+          {members.map(item => {
             const {
               id,
               name,
@@ -95,7 +92,6 @@ class MembersListView extends Component {
 
 MembersListView.propTypes = {
   members: PropTypes.array,
-  searchTerm: PropTypes.string,
 };
 
 export default MembersListView;
