@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import MembersListView from './members-list-view';
+import SearchForm from './search-form';
 
 const initialState = {
   searchTerm: '',
 };
-
-// const resultsPerPage = 3;
 
 class MembersListContainer extends Component {
   constructor(props) {
@@ -18,8 +17,9 @@ class MembersListContainer extends Component {
   }
 
   handleChange(event) {
+    const term = event.target.value;
     this.setState(() => ({
-      searchTerm: event.target.value,
+      searchTerm: term,
     }));
   }
 
@@ -33,23 +33,8 @@ class MembersListContainer extends Component {
       <>
         {message && <p className="new-member-created">New member has been successfully created</p>}
 
-        <form className="search">
-          <input
-            type="search"
-            name="search-term"
-            value={searchTerm}
-            placeholder="Find by name"
-            autoComplete="off"
-            onChange={this.handleSubmit}
-            className="search__keyword"
-          />
-        </form>
-
-        {Array.isArray(members) && members.length ? (
-          <MembersListView members={members} />
-        ) : (
-          <p className="nothing-found">No members found</p>
-        )}
+        <SearchForm changeCallback={this.handleChange} searchTerm={searchTerm} />
+        <MembersListView members={members} searchTerm={searchTerm} />
       </>
     );
   }
