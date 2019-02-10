@@ -487,6 +487,33 @@ header {
   }
 }
 
+.pagination {
+  list-style: none;
+  text-align: center;
+  margin: 0 0 20px;
+
+  &__item {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+
+    a {
+      display: inline-block;
+      outline: 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin: 0 5px;
+    }
+
+    &--active {
+      a {
+        color: map-get($colors, theme-primary);
+        border-color: map-get($colors, theme-primary);
+      }
+    }
+  }
+}
+
 .no-members-found,
 .page-not-found {
   padding: 100px;

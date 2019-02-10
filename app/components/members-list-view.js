@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import md5 from 'md5';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Pagination from './pagination';
 
-const initialState = { activeItem: 0 };
+const initialState = { activeItem: 0, showPage: 0 };
 const resultsPerPage = 5;
 
 class MembersListView extends Component {
@@ -12,16 +13,25 @@ class MembersListView extends Component {
     super(props);
     this.state = initialState;
     this.clickHandler = this.clickHandler.bind(this);
+    this.showPage = this.showPage.bind(this);
   }
 
   componentDidMount() {
-    const allButtons = document.querySelectorAll('.member a');
-    allButtons.forEach(button => button.addEventListener('click', this.clickHandler));
+    this.bindEventHandlers();
+  }
+
+  componentDidUpdate() {
+    this.bindEventHandlers();
   }
 
   componentWillUnmount() {
     const allButtons = document.querySelectorAll('.member a');
     allButtons.forEach(button => button.removeEventListener('click', this.clickHandler));
+  }
+
+  bindEventHandlers() {
+    const allButtons = document.querySelectorAll('.member a');
+    allButtons.forEach(button => button.addEventListener('click', this.clickHandler));
   }
 
   clickHandler(event) {
@@ -35,20 +45,32 @@ class MembersListView extends Component {
     }));
   }
 
+  showPage(pageNumber) {
+    this.setState(() => ({
+      showPage: pageNumber,
+      activeItem: 0,
+    }));
+  }
+
   render() {
-    const { activeItem } = this.state;
+    const { activeItem, showPage } = this.state;
     const { members } = this.props;
 
     if (members.length === 0) {
       return <p className="no-members-found">No members found</p>;
     }
 
+    const rangeStart = showPage * resultsPerPage;
+    const rangeEnd = (showPage + 1) * resultsPerPage;
+
+    const pageItems = members.slice(rangeStart, rangeEnd);
+
     return (
       <>
         <h2>{members.length} People</h2>
 
         <ul className="members-list">
-          {members.map(item => {
+          {pageItems.map(item => {
             const {
               id,
               name,
@@ -59,7 +81,6 @@ class MembersListView extends Component {
             const email_hash = md5(email);
             const img_src = `http://www.gravatar.com/avatar/${email_hash}?s=32`;
 
-            /* ideally use item-id from database for key attribute */
             return (
               <li
                 key={id}
@@ -85,6 +106,12 @@ class MembersListView extends Component {
             );
           })}
         </ul>
+        <Pagination
+          resultsPerPage={resultsPerPage}
+          currentPage={showPage}
+          nrOfItems={members.length}
+          changeCallback={this.showPage}
+        />
       </>
     );
   }
