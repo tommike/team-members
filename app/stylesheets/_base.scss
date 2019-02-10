@@ -335,6 +335,7 @@ a {
 /* layout */
 header {
   background: map-get($colors, theme-primary);
+  padding: 20px 0;
 }
 
 .page {
@@ -372,31 +373,27 @@ header {
   }
 }
 
-.search {
-  padding: 20px 20px;
-  background: #eee;
-
-  &__keyword {
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    display: block;
-    font-size: 14px;
-    line-height: 16px;
-    padding: 5px;
-  }
-}
-
 .members-list {
   list-style: none;
 
   &__item {
     border-top: 1px solid #ccc;
     position: relative;
+
+    &--active {
+      .member__address {
+        display: block;
+      }
+    }
   }
 }
 
 .member {
-  padding: 20px 0 0;
+  a {
+    display: block;
+    padding: 20px 0;
+    outline: 0;
+  }
 
   &__name {
     font-size: 16px;
@@ -409,7 +406,7 @@ header {
   &__email {
     font-size: 14px;
     line-height: 18px;
-    margin: 0 0 20px 70px;
+    margin: 0 0 0 70px;
   }
 
   &__photo {
@@ -453,4 +450,41 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: bold;
+}
+
+.search {
+  padding: 20px;
+  background: #eee;
+
+  &__field {
+    background: #fff;
+    position: relative;
+    width: 200px;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__keyword {
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 5px 5px 5px 35px;
+    color: #888;
+    display: block;
+    width: calc(100% - 40px);
+  }
+}
+
+.no-members-found,
+.page-not-found {
+  padding: 100px;
+  text-align: center;
+  color: #f00;
 }
