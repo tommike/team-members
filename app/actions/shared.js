@@ -12,7 +12,6 @@ function receiveData(members) {
 export function handleInitialData() {
   return function(dispatch) {
     return getInitialData().then(({ members }) => {
-      console.log(members);
       dispatch(receiveData(members));
     });
   };

@@ -5,7 +5,7 @@ import md5 from 'md5';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Pagination from './pagination';
 
-const initialState = { activeItem: 0, showPage: 0 };
+const initialState = { activeItem: 0, showPage: 0, searchTerm: null };
 const resultsPerPage = 5;
 
 class MembersListView extends Component {
@@ -22,6 +22,18 @@ class MembersListView extends Component {
 
   componentDidUpdate() {
     this.bindEventHandlers();
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.searchTerm !== state.searchTerm) {
+      return {
+        showPage: 0,
+        activeItem: 0,
+        searchTerm: props.searchTerm,
+      };
+    }
+
+    return null;
   }
 
   componentWillUnmount() {
@@ -62,7 +74,6 @@ class MembersListView extends Component {
 
     const rangeStart = showPage * resultsPerPage;
     const rangeEnd = (showPage + 1) * resultsPerPage;
-
     const pageItems = members.slice(rangeStart, rangeEnd);
 
     return (

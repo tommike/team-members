@@ -34,7 +34,7 @@ class MembersListContainer extends Component {
     return (
       <>
         <SearchForm changeCallback={this.handleChange} searchTerm={searchTerm} />
-        <MembersListView members={results} />
+        <MembersListView members={results} searchTerm={searchTerm} />
       </>
     );
   }
